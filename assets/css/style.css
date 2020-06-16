@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "roboto";
+  src: url(/assets/fonts/Roboto/Roboto-Regular.ttf); }
+
+@font-face {
+  font-family: "robotobold";
+  src: url(/assets/fonts/Roboto/Roboto-Bold.ttf); }
+
+a :hover :active :link :visited {
+  text-decoration: none;
+  color: none; }
+
+h1 {
+  font-family: "robotobold";
+  font-weight: bold;
+  font-size: 76px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -5px -5px white; }
+
+h2 {
+  font-family: "robotobold";
+  font-weight: bold;
+  font-size: 36px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -2px -2px white; }
+
+body {
+  background: #c8c8c8;
+  background-image: url(/images/background.jpg);
+  font-family: "roboto"; }
+
+header {
+  text-align: center; }
+
+main {
+  display: block;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto; }
+
+#pimg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+#pname {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  #pname div {
+    margin-top: -40px; }
+    #pname div h2 {
+      text-align: center; }
+    #pname div input {
+      height: 25px;
+      width: 300px; }
+
+#racechoose {
+  display: grid; }
+
+#p1race {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 2;
+  grid-column: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p1race div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p1race figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto; }
+    #p1race figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#p2race {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 2;
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p2race div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p2race figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto; }
+    #p2race figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#itemchoose {
+  display: grid; }
+
+#p1item {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 1;
+  grid-column: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p1item div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p1item figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto; }
+    #p1item figure img {
+      width: 50px; }
+    #p1item figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#p2item {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 2;
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p2item div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p2item figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px; }
+    #p2item figure img {
+      width: 50px; }
+    #p2item figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#start {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  font-size: 60px;
+  background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+  #start :hover {
+    cursor: pointer;
+    color: #ffc5c5;
+    background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+    border: 2px solid black;
+    border-radius: 20px; }
