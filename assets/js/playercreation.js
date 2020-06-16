@@ -45,15 +45,15 @@
 }
 ]
 
-let p1 = [];
-let p2 = [];
-let itemp1 = [{
+p1 = [];
+p2 = [];
+itemp1 = [{
     dodgeChance: 0,
     bonusHeal: 0,
     bonusDamage: 0,
     attackTwiceChance: 0,
 }];
-let itemp2 = [{
+itemp2 = [{
     dodgeChance: 0,
     bonusHeal: 0,
     bonusDamage: 0,
@@ -237,6 +237,3 @@ document.getElementById("start").addEventListener("click", () => {
     console.log(`Player 1 name is ${p1[0].name} and he is playing a ${raceChosenp1}. He choose the item : ${itemChosenp1}`);
     console.log(`Player 2 name is ${p2[0].name} and he is playing a ${raceChosenp2}. He choose the item : ${itemChosenp2}`);
 });
-
-
-
