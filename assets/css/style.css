@@ -10,6 +10,12 @@ a :hover :active :link :visited {
   text-decoration: none;
   color: none; }
 
+.fightscreen {
+  display: default; }
+
+main {
+  display: none; }
+
 h1 {
   font-family: "robotobold";
   font-weight: bold;
