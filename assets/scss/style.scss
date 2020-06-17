@@ -373,5 +373,7 @@ main{
     background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
     font-size: 14px;
     padding : 5px;
-    overflow-y: scroll;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
 }
