@@ -21,7 +21,8 @@ h1 {
   font-weight: bold;
   font-size: 76px;
   color: rgba(211, 211, 211, 0.5);
-  text-shadow: -5px -5px white; }
+  text-shadow: -5px -5px white;
+  margin-bottom: 25px; }
 
 h2 {
   font-family: "robotobold";
@@ -203,3 +204,129 @@ main {
     background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
     border: 2px solid black;
     border-radius: 20px; }
+
+#combatlog {
+  display: none;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: auto; }
+
+#cpname {
+  display: grid;
+  grid-template-rows: 1; }
+
+#cp1name {
+  grid-column: 1;
+  text-align: center; }
+
+#cp2name {
+  grid-column: 2;
+  text-align: center; }
+
+#hpmp1 {
+  grid-columns: 1;
+  width: 300px;
+  height: 20px;
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto; }
+
+#hpp1 {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  background: greenyellow; }
+
+#hpmp2 {
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 2;
+  width: 300px;
+  height: 20px;
+  background-color: red; }
+
+#hpp2 {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  background: greenyellow; }
+
+#portrait {
+  display: grid; }
+
+#portraitp1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto; }
+
+#portraitp2 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto; }
+
+#fightbuttonp1 {
+  display: flex;
+  justify-content: space-evenly;
+  grid-column: 1;
+  margin-top: 5%;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto; }
+  #fightbuttonp1 div {
+    color: black;
+    background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    #fightbuttonp1 div:hover {
+      color: #ffc5c5;
+      background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+      border: 2px solid black;
+      border-radius: 5px;
+      cursor: pointer; }
+
+#fightbuttonp2 {
+  display: flex;
+  grid-column: 2;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto; }
+  #fightbuttonp2 div {
+    color: black;
+    background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    #fightbuttonp2 div:hover {
+      color: #ffc5c5;
+      background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+      border: 2px solid black;
+      border-radius: 5px;
+      cursor: pointer; }
+
+#logbyturn {
+  grid-column: 1/3;
+  margin-top: 50px; }
+
+#textlog {
+  height: 150px;
+  width: 100%;
+  background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+  font-size: 14px;
+  padding: 5px;
+  overflow-y: scroll; }
