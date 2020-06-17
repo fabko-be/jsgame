@@ -30,6 +30,23 @@ h2 {
   color: rgba(211, 211, 211, 0.5);
   text-shadow: -2px -2px white; }
 
+h3 {
+  font-family: "robotobold";
+  font-weight: bold;
+  font-size: 24px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -2px -2px white; }
+
+.backtohome {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -2px -2px white; }
+
 body {
   background: #c8c8c8;
   background-image: url(/images/background.jpg);

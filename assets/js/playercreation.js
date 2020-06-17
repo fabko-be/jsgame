@@ -236,4 +236,7 @@ document.getElementById("start").addEventListener("click", () => {
     console.log(p2);
     console.log(`Player 1 name is ${p1[0].name} and he is playing a ${raceChosenp1}. He choose the item : ${itemChosenp1}`);
     console.log(`Player 2 name is ${p2[0].name} and he is playing a ${raceChosenp2}. He choose the item : ${itemChosenp2}`);
+    document.getElementById("cp1name").innerHTML = (p1[0].name);
+    document.getElementById("cp2name").innerHTML = (p2[0].name);
+    document.getElementById("fightscreen").style.display = "none";
 });
