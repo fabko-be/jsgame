@@ -227,6 +227,40 @@ document.getElementById("bowp2").addEventListener("click", () => {
 
 // fin création P2
 
+function playerProfil(){
+    switch (raceChosenp1) {
+        case "Humain":
+            document.getElementById("imgpp1").src = "../images/humanp.png";
+            break;
+        case "Orc":
+            document.getElementById("imgpp1").src = "../images/orcp.png";
+            break;
+        case "Elf":
+            document.getElementById("imgpp1").src = "../images/elfp.png";
+            break;
+        case "Vampire":
+            document.getElementById("imgpp1").src = "../images/vampp.png";
+            break;
+        default :
+}
+    switch (raceChosenp2) {
+        case "Humain":
+            document.getElementById("imgpp2").src = "../images/humanp.png";
+            break;
+        case "Orc":
+            document.getElementById("imgpp2").src = "../images/orcp.png";
+            break;
+        case "Elf":
+            document.getElementById("imgpp2").src = "../images/elfp.png";
+            break;
+        case "Vampire":
+            document.getElementById("imgpp2").src = "../images/vampp.png";
+            break;
+        default :
+
+}
+}
+
 document.getElementById("start").addEventListener("click", () => {
     p1[0].name = (document.getElementById("p1name").value);
     p1.push(itemp1);
@@ -239,4 +273,17 @@ document.getElementById("start").addEventListener("click", () => {
     document.getElementById("cp1name").innerHTML = (p1[0].name);
     document.getElementById("cp2name").innerHTML = (p2[0].name);
     document.getElementById("fightscreen").style.display = "none";
+    document.getElementById("combatlog").style.display = "block";
+    playerProfil()
 });
+
+// damage = 0;
+// p1[0] = Joueur , p1[1] = Bonus
+// itemChoosenp1 ou itemChoosenp2 = Item choisis  
+// let damage = 0;
+
+// function combatLog(){
+//     switch{
+//         case
+//     }
+// }
