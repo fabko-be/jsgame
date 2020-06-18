@@ -4,7 +4,7 @@
     race : "human",
     maxHealth: 100,
     startHealth: 100,
-    currentHealth: 20,
+    currentHealth: 100,
     maxDamage: 20,
     maxHealing: 30,
     damageTaken: 0.8,
@@ -21,7 +21,7 @@
     race: "orc",
     maxHealth: 140,
     startHealth: 140,
-    currentHealth : 20,
+    currentHealth :100,
     maxDamage: 20,
     maxHealing: 30,
     damageTaken: 1,
@@ -55,7 +55,7 @@
     race : "vampire",
     maxHealth : 100,
 	startHealth : 100,
-    currentHealth : 20,
+    currentHealth : 100,
     maxDamage : 20,
 	maxHealing : 30,
 	damageTaken : 1,
@@ -265,6 +265,72 @@ function heal(attacker,defender){
     return attacker.currentHealth;
 
 }
+
+// Fonction attack -------------------------------------
+
+function attack(attacker,defender){
+
+    damage = randomIntGen(1, 20) + Math.floor((randomIntGen(1, 20)*attacker.bonusDamage));
+
+    if (defender.item=="boots"){
+
+        dodgeChance(attacker,defender);
+    };
+
+    if (defender.race == "elf") {
+
+        counter(attacker, defender);
+    };
+
+    defender.currentHealth -= damage;
+
+    textLog(`${attacker.name} hit ${defender.name} and put him ${damage} HP damage.`)
+
+    return defender.currentHealth;
+    
+};
+
+function gameover(attacker, defender) {
+
+    if (attacker.currentHealth<= 0){
+
+        
+    }
+}
+
+function counter(attacker, defender) {
+
+     backhit = Math.floor(Math.random() * (100));
+
+        if (backhit <=29) {
+
+            damage = Math.round(damage/2);
+            attacker.currentHealth -= damage;
+
+            textLog(`${defender.name} counter the hit from ${attacker.name} and put him ${damage} HP damage.`)
+
+            damage=0;
+        } 
+}
+
+function dodgeChance(attacker, defender){
+    
+    let dodge = Math.floor(Math.random() * (100));
+
+        if (dodge <= 29) {
+
+            damage = 0;
+
+            textLog(`${defender.name} dodge the attack from ${attacker.name} ! Maybe next time...`)
+        
+        } else {
+            textLog(`${defender.name} can't dodge the attack from ${attacker.name}. Damn it ! `)
+        }
+        
+};
+
+
+
 // Si l'ennemi est un vampire (en cas de tour passer ou d'attaque)
 function vampireCheck(attacker, defender){
     if (defender.lifeSteal != 0){
@@ -282,6 +348,27 @@ function vampireCheck(attacker, defender){
     }
     return attacker.currentHealth;
 }
+
+
+document.getElementById("p1attack").addEventListener("click",() => {
+    attack(p1[0],p2[0]);
+    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
+    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
+    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
+    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
+    document.getElementById("fightbuttonp1").style.display = "none";
+    document.getElementById("fightbuttonp2").style.display = "flex";
+});
+document.getElementById("p2attack").addEventListener("click",() => {
+    attack(p2[0],p1[0]);
+    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
+    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
+    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
+    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
+    document.getElementById("fightbuttonp1").style.display = "flex";
+    document.getElementById("fightbuttonp2").style.display = "none";
+});
+
 // Deux eventlistener pour mettre à jour les barres de vies et lancer le heal
 document.getElementById("p1heal").addEventListener("click",() => {
     heal(p1[0],p2[0]);
