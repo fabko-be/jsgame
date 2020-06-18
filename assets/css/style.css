@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "roboto";
+  src: url(/assets/fonts/Roboto/Roboto-Regular.ttf); }
+
+@font-face {
+  font-family: "robotobold";
+  src: url(/assets/fonts/Roboto/Roboto-Bold.ttf); }
+
+a :hover :active :link :visited {
+  text-decoration: none;
+  color: none; }
+
+.fightscreen {
+  display: default; }
+
+main {
+  display: none; }
+
+h1 {
+  font-family: "robotobold";
+  font-weight: bold;
+  font-size: 76px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -5px -5px white;
+  margin-bottom: 25px; }
+
+h2 {
+  font-family: "robotobold";
+  font-weight: bold;
+  font-size: 36px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -2px -2px white; }
+
+h3 {
+  font-family: "robotobold";
+  font-weight: bold;
+  font-size: 24px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -2px -2px white; }
+
+.backtohome {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgba(211, 211, 211, 0.5);
+  text-shadow: -2px -2px white; }
+
+body {
+  background: #c8c8c8;
+  background-image: url(/images/background.jpg);
+  font-family: "roboto"; }
+
+header {
+  text-align: center; }
+
+main {
+  display: block;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto; }
+
+#pimg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+#pname {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  #pname div {
+    margin-top: -40px; }
+    #pname div h2 {
+      text-align: center; }
+    #pname div input {
+      height: 25px;
+      width: 300px; }
+
+#racechoose {
+  display: grid; }
+
+#p1race {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 2;
+  grid-column: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p1race div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p1race figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto; }
+    #p1race figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#p2race {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 2;
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p2race div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p2race figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto; }
+    #p2race figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#itemchoose {
+  display: grid; }
+
+#p1item {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 1;
+  grid-column: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p1item div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p1item figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto; }
+    #p1item figure img {
+      width: 50px; }
+    #p1item figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#p2item {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 2;
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: auto;
+  margin-right: auto; }
+  #p2item div {
+    grid-column: span 4;
+    margin-left: auto;
+    margin-right: auto; }
+  #p2item figure {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px; }
+    #p2item figure img {
+      width: 50px; }
+    #p2item figure img:hover {
+      transform: scale(1.5);
+      cursor: pointer; }
+
+#start {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  font-size: 60px;
+  background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+  #start :hover {
+    cursor: pointer;
+    color: #ffc5c5;
+    background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+    border: 2px solid black;
+    border-radius: 20px; }
+
+#combatlog {
+  display: none;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: auto; }
+
+#cpname {
+  display: grid;
+  grid-template-rows: 1; }
+
+#cp1name {
+  grid-column: 1;
+  text-align: center; }
+
+#cp2name {
+  grid-column: 2;
+  text-align: center; }
+
+#hpmp1 {
+  grid-columns: 1;
+  width: 300px;
+  height: 20px;
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto; }
+
+#hpp1 {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  background: greenyellow; }
+
+#hpmp2 {
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 2;
+  width: 300px;
+  height: 20px;
+  background-color: red; }
+
+#hpp2 {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  background: greenyellow; }
+
+#portrait {
+  display: grid; }
+
+#portraitp1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto; }
+
+#portraitp2 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto; }
+
+#fightbuttonp1 {
+  display: flex;
+  justify-content: space-evenly;
+  grid-column: 1;
+  margin-top: 5%;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto; }
+  #fightbuttonp1 div {
+    color: black;
+    background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    #fightbuttonp1 div:hover {
+      color: #ffc5c5;
+      background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+      border: 2px solid black;
+      border-radius: 5px;
+      cursor: pointer; }
+
+#fightbuttonp2 {
+  display: flex;
+  grid-column: 2;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto; }
+  #fightbuttonp2 div {
+    color: black;
+    background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    #fightbuttonp2 div:hover {
+      color: #ffc5c5;
+      background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+      border: 2px solid black;
+      border-radius: 5px;
+      cursor: pointer; }
+
+#logbyturn {
+  grid-column: 1/3;
+  margin-top: 50px; }
+
+#textlog {
+  height: 150px;
+  width: 100%;
+  background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+  font-size: 14px;
+  padding: 5px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse; }
