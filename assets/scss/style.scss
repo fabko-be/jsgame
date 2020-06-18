@@ -269,12 +269,14 @@ main{
     background-color: red;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 5px;
 }
 #hpp1{
     width: 100%;
     height: 20px;
     text-align: center;
     background: greenyellow;
+    border-radius: 5px;
 }
 
 #hpmp2{
@@ -283,7 +285,8 @@ main{
     grid-column: 2;
     width: 300px;
     height: 20px;
-    background-color: red;
+    background: red;
+    border-radius: 5px;
 }
 
 #hpp2{
@@ -291,6 +294,7 @@ main{
     height: 20px;
     text-align: center;
     background: greenyellow;
+    border-radius: 5px;
 }
 #portrait{
     display:grid;
@@ -300,12 +304,20 @@ main{
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
+    img{
+        border-radius: 25px;
+        border : 2px solid $grey;
+    }
 }
 #portraitp2{
     @include figmarg()
     margin-top: 5%;    
     margin-left: auto;
     margin-right: auto;
+    img{
+        border-radius: 25px;
+        border : 2px solid $grey;
+    }
 }
 
 #fightbuttonp1{
@@ -371,6 +383,7 @@ main{
     height: 150px;
     width: 100%;
     background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
+    border-radius: 10px;
     font-size: 14px;
     padding : 5px;
     overflow: auto;

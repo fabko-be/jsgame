@@ -97,9 +97,3 @@ document.getElementById("bowp2").addEventListener("click", () => {
     document.getElementById("swordp2").style.transform = "scale(1)"
     document.getElementById("bowp2").style.transform = "scale(1.5)"
 });
-document.getElementById("start").addEventListener("click", () => {
-    document.getElementById("fightscreen").style.display = "none";
-    document.getElementById("combatlog").style.display = "block";
-    document.getElementById("hpp1").innerHTML = "100%";
-    document.getElementById("hpp2").innerHTML = "100%";
-});

@@ -130,6 +130,26 @@ document.getElementById("bowp2").addEventListener("click", () => {
     p2.item = "bow";
 });
 
+
+function checkCreation(player1, player2){
+    
+    if (player1.name == "" || player1.race == null || player1.item == "" || player2.name == "" || player2.race == null || player2.item == ""){
+        alert("All fields are required !")
+    } else {
+        playerProfil()
+        item(p1);
+        item(p2);
+        document.getElementById("cp1name").innerHTML = (p1.name);
+        document.getElementById("cp2name").innerHTML = (p2.name);
+        document.getElementById("fightscreen").style.display = "none";
+        document.getElementById("combatlog").style.display = "block";
+        document.getElementById("hpp1").innerHTML = "100%";
+        document.getElementById("hpp2").innerHTML = "100%";
+        textLog(`Player 1 name is ${p1.name} and he is playing the race of ${p1.race} equiped with : ${p1.item}.`);
+        textLog(`Player 2 name is ${p2.name} and he is playing the race of ${p2.race} equiped with : ${p2.item}.`)
+        start();
+    }
+}
 // fin création P2
 // Fonction pour généré un entier positif entre min et max (inclus)
 function randomIntGen(min, max){
@@ -205,14 +225,7 @@ function textLog(text){
 document.getElementById("start").addEventListener("click", () => {
     p1.name = (document.getElementById("p1name").value);
     p2.name = (document.getElementById("p2name").value);
-    document.getElementById("cp1name").innerHTML = (p1.name);
-    document.getElementById("cp2name").innerHTML = (p2.name);
-    textLog(`Player 1 name is ${p1.name} and he is playing the race of ${p1.race} equiped with : ${p1.item}.`);
-    textLog(`Player 2 name is ${p2.name} and he is playing the race of ${p2.race} equiped with : ${p2.item}.`)
-    playerProfil()
-    item(p1);
-    item(p2);
-    start();
+    checkCreation(p1,p2);
 });
 // Fonction Heal standard
 function heal(attacker,defender){
@@ -275,7 +288,6 @@ function hpUpdate(){
 
 function attack(attacker, defender){
     damage = randomIntGen(1, 20) + Math.floor((randomIntGen(1, 20)*attacker.bonusDamage));
-    console.log(damage)
     
     switch(defender.race){
         case "human": 
@@ -391,16 +403,16 @@ document.getElementById("p2pass").addEventListener("click",() => {
 });
 
 document.getElementById("p1attack").addEventListener("click",() => {
-attack(p1,p2);
-hpUpdate();
-document.getElementById("fightbuttonp1").style.display = "none";
-document.getElementById("fightbuttonp2").style.display = "flex";
-winLose(p1,p2)
+    attack(p1,p2);
+    hpUpdate();
+    document.getElementById("fightbuttonp1").style.display = "none";
+    document.getElementById("fightbuttonp2").style.display = "flex";
+    winLose(p1,p2)
 });
 document.getElementById("p2attack").addEventListener("click",() => {
-attack(p2,p1);
-hpUpdate();
-document.getElementById("fightbuttonp1").style.display = "flex";
-document.getElementById("fightbuttonp2").style.display = "none";
-winLose(p2,p1)
+    attack(p2,p1);
+    hpUpdate();
+    document.getElementById("fightbuttonp1").style.display = "flex";
+    document.getElementById("fightbuttonp2").style.display = "none";
+    winLose(p2,p1)
 });
