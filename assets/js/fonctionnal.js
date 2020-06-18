@@ -289,3 +289,52 @@ document.getElementById("p2pass").addEventListener("click",() => {
     document.getElementById("fightbuttonp1").style.display = "flex";
     document.getElementById("fightbuttonp2").style.display = "none";
 });
+
+document.getElementById("p1attack").addEventListener("click",() => {
+attack(p1,p2);
+hpUpdate();
+document.getElementById("fightbuttonp1").style.display = "none";
+document.getElementById("fightbuttonp2").style.display = "flex";
+});
+document.getElementById("p2attack").addEventListener("click",() => {
+attack(p2,p1);
+hpUpdate();
+document.getElementById("fightbuttonp1").style.display = "flex";
+document.getElementById("fightbuttonp2").style.display = "none";
+});
+
+function attack(attacker, defender){
+    damage = randomIntGen(1, 20) + Math.floor((randomIntGen(1, 20)*attacker.bonusDamage));
+
+    switch(defender.item){
+        case "boots": 
+        dodgeChance();
+        break;
+        case "bow":
+        attackTwice()
+        break;
+    }
+    // if (defender.item == "boots"){
+    //     dodgeChance();
+    // }
+        defender.currentHealth -= damage
+        textLog(`${defender} take ${damage} damages.`)
+    };
+
+function dodgeChance(attacker,defender){
+    let dodge = Math.floor(Math.random()* 100);
+
+    if (dodge <= 29){
+        damage = 0;
+        textLog(`${defender} dodge the attack`)
+    }
+};
+
+function attackTwice(attacker, defender){
+    let twice = Math.floor(Math.random()* 100);
+
+    if (twice <= 29){
+        textLog(`The attack hit ${defender} twice ! Nice shot !`)
+        damage *= 2
+    }
+};
