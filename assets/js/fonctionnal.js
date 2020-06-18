@@ -159,7 +159,6 @@ function start(){
     } else {
         document.getElementById("fightbuttonp1").style.display = "none";
     }
-    turn = 1;
 }
 // Fonction qui ajoute les multiplicateurs au joueur en fonction de l'item sélectionné
 function item(player){
@@ -217,14 +216,14 @@ function textLog(text){
     return document.getElementById("textlog").innerHTML += text + "<br>";
 }
 document.getElementById("start").addEventListener("click", () => {
-    console.log(p1[0]);
-    console.log(p2[0]);
+    // console.log(p1[0]);
+    // console.log(p2[0]);
     p1[0].name = (document.getElementById("p1name").value);
     p2[0].name = (document.getElementById("p2name").value);
-    console.log(p1);
-    console.log(p2);
-    console.log(`Player 1 name is ${p1[0].name} and he is playing the race of ${p1[0].race} equiped with : ${p1[0].item}`);
-    console.log(`Player 2 name is ${p2[0].name} and he is playing the race of ${p2[0].race}.equiped with : ${p2[0].item}`);
+    // console.log(p1);
+    // console.log(p2);
+    // console.log(`Player 1 name is ${p1[0].name} and he is playing the race of ${p1[0].race} equiped with : ${p1[0].item}`);
+    // console.log(`Player 2 name is ${p2[0].name} and he is playing the race of ${p2[0].race}.equiped with : ${p2[0].item}`);
     document.getElementById("cp1name").innerHTML = (p1[0].name);
     document.getElementById("cp2name").innerHTML = (p2[0].name);
     textLog(`Player 1 name is ${p1[0].name} and he is playing the race of ${p1[0].race} equiped with : ${p1[0].item}.`);
@@ -248,19 +247,20 @@ function heal(attacker,defender){
 
     textLog(`${attacker.name} heals himself for ${heals}. He has now ${attacker.currentHealth}HP.`)}
 
-    if (defender.lifeSteal != 0){
-        let stolenLife = Math.floor((attacker.currentHealth)*defender.lifeSteal);
-        attacker.currentHealth -= stolenLife;
-        defender.currentHealth += stolenLife;
+    vampireCheck(attacker,defender)
+    // if (defender.lifeSteal != 0){
+    //     let stolenLife = Math.floor((attacker.currentHealth)*defender.lifeSteal);
+    //     attacker.currentHealth -= stolenLife;
+    //     defender.currentHealth += stolenLife;
 
-        if(defender.currentHealth > defender.maxHealth){
-            defender.currentHealth = defender.maxHealth;
+    //     if(defender.currentHealth > defender.maxHealth){
+    //         defender.currentHealth = defender.maxHealth;
         
-        textLog(`${defender.name} can't steal more from ${attacker.name} but cause ${stolenLife} damage to him.`)
-        }else{
-            textLog(`${defender.name} stole ${stolenLife} HP from ${attacker.name}.`)
-        }
-    }
+    //     textLog(`${defender.name} can't steal more from ${attacker.name} but cause ${stolenLife} damage to him.`)
+    //     }else{
+    //         textLog(`${defender.name} stole ${stolenLife} HP from ${attacker.name}.`)
+    //     }
+    // }
 
     return attacker.currentHealth;
 
@@ -268,9 +268,18 @@ function heal(attacker,defender){
 // Si l'ennemi est un vampire (en cas de tour passer ou d'attaque)
 function vampireCheck(attacker, defender){
     if (defender.lifeSteal != 0){
-        let stolenLife = Math.floor((attacker.currentHealth)*defender.lifeSteal);
+
+        let stolenLife;
+        if(attacker.currentHealth >= 5){
+        stolenLife = Math.round((attacker.currentHealth)*defender.lifeSteal);
         attacker.currentHealth -= stolenLife;
         defender.currentHealth += stolenLife;
+    }   else {
+        stolenLife = Math.ceil((attacker.currentHealth)*defender.lifeSteal);
+        attacker.currentHealth -= stolenLife;
+        defender.currentHealth += stolenLife;
+    }
+
 
         if(defender.currentHealth > defender.maxHealth){
             defender.currentHealth = defender.maxHealth;
