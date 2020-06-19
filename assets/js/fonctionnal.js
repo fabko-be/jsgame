@@ -1,3 +1,8 @@
+// let data = fetch("./data/human.json");
+// console.log(data);
+
+
+
 let humans =
 {
     name : "",
@@ -149,7 +154,7 @@ function checkCreation(player1, player2){
         textLog(`Player 1 name is ${p1.name} and he is playing the race of ${p1.race} equiped with : ${p1.item}.`);
         textLog(`Player 2 name is ${p2.name} and he is playing the race of ${p2.race} equiped with : ${p2.item}.`)
         start();
-        textLog(`<font color = "grey">Round ${turn}</font> :`)
+        // textLog(`<font color = "grey">Round ${turn}</font> :`)
     }
 }
 // fin création P2
@@ -233,13 +238,27 @@ document.getElementById("start").addEventListener("click", () => {
     p2.name = (document.getElementById("p2name").value);
     checkCreation(p1,p2);
 });
+
+function winLose(attacker,defender){
+    if(attacker.currentHealth <= 0){
+        attacker.currentHealth = 0;
+        document.getElementById("fightbuttonp1").style.display = "none";
+        document.getElementById("fightbuttonp2").style.display = "none";
+        textLog(`<font color ="#336600" size="20px"> ${defender.name} win the fight !</font>`);
+    }
+    if(defender.currentHealth <= 0){
+        defender.currentHealth = 0;
+        document.getElementById("fightbuttonp1").style.display = "none";
+        document.getElementById("fightbuttonp2").style.display = "none";
+        textLog(`<font color ="#336600" size="20px"> ${attacker.name} win the fight !</font>`);
+    }
+}
 // Fonction Heal standard
 function heal(attacker,defender){
 
     let heals = randomIntGen(1, 30) + Math.floor((randomIntGen(1, 30)*attacker.bonusHeal));
 
     attacker.currentHealth += heals;
-
     if(attacker.currentHealth > attacker.maxHealth){
         let depasse = heals - (attacker.currentHealth - attacker.maxHealth)
         attacker.currentHealth = attacker.maxHealth;
@@ -368,55 +387,27 @@ function counter(attacker, defender) {
            damage=0;
        } 
 }
-
-function winLose(attacker,defender){
-    if(attacker.currentHealth <= 0){
-        attacker.currentHealth = 0;
-        //document.getElementById("tryagain").style.display = "flex";
-        // if (p1 = defender){
-        //     document.getElementById("imgpp2").style.transform = "scale(1.5)";
-        // } else if  (p2 = defender) {
-        //     document.getElementById("imgpp1").style.transform = "scale(1.5)";
-        // };
-        document.getElementById("fightbuttonp1").style.display = "none";
-        document.getElementById("fightbuttonp2").style.display = "none";
-        textLog(`<font color = "#336600">${defender.name} win the fight !</font>`)
-
-    }
-    if(defender.currentHealth <= 0){
-        defender.currentHealth = 0;
-        //document.getElementById("tryagain").style.display = "flex";
-        // if (p1 = defender){
-        //     document.getElementById("imgpp1").style.transform = "scale(1.5)";
-        // } else {
-        //     document.getElementById("imgpp2").style.transform = "scale(1.5)";
-        // };
-        document.getElementById("fightbuttonp1").style.display = "none";
-        document.getElementById("fightbuttonp2").style.display = "none";
-        textLog(`<font color = "#336600>${attacker.name} win the fight !</font>`)
-
-    }
-}
 // Deux eventlistener pour mettre à jour les barres de vies et lancer le heal
 document.getElementById("p1heal").addEventListener("click",() => {
+    textLog(`<font color = "grey">Round ${turn}</font> :`);
     heal(p1,p2);
     hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "none";
     document.getElementById("fightbuttonp2").style.display = "flex";
     winLose(p1,p2);
     turn ++
-    textLog(`<font color = "grey">Round ${turn}</font> :`);
 });
 document.getElementById("p2heal").addEventListener("click",() => {
+    textLog(`<font color = "grey">Round ${turn}</font> :`);
     heal(p2,p1);
     hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "flex";
     document.getElementById("fightbuttonp2").style.display = "none";
     winLose(p2,p1);
     turn ++;
-    textLog(`<font color = "grey">Round ${turn}</font> :`);
 });
 document.getElementById("p1pass").addEventListener("click",() => {
+    textLog(`<font color = "grey">Round ${turn}</font> :`);
     vampireCheck(p1,p2);
     hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "none";
@@ -424,36 +415,35 @@ document.getElementById("p1pass").addEventListener("click",() => {
     winLose(p1,p2);
     turn ++;
     textLog(`${p1.name} pass.`)
-    textLog(`<font color = "grey">Round ${turn}</font> :`);
 });
 document.getElementById("p2pass").addEventListener("click",() => {
+    textLog(`<font color = "grey">Round ${turn}</font> :`);
     vampireCheck(p2,p1);
     hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "flex";
     document.getElementById("fightbuttonp2").style.display = "none";
     winLose(p2,p1);
     turn ++
-    textLog(`${p2.name} pass.`)
-    textLog(`<font color = "grey">Round ${turn}</font> :`);
+    textLog(`${p2.name} pass.`) 
 });
 
 document.getElementById("p1attack").addEventListener("click",() => {
+    textLog(`<font color = "grey">Round ${turn}</font> :`);
     attack(p1,p2);
     hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "none";
     document.getElementById("fightbuttonp2").style.display = "flex";
     winLose(p1,p2);
     turn ++;
-    textLog(`<font color = "grey">Round ${turn}</font> :`);
 });
 document.getElementById("p2attack").addEventListener("click",() => {
+    textLog(`<font color = "grey">Round ${turn}</font> :`); 
     attack(p2,p1);
     hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "flex";
     document.getElementById("fightbuttonp2").style.display = "none";
     winLose(p2,p1);
     turn ++
-    textLog(`<font color = "grey">Round ${turn}</font> :`);
 });
 
 window.setInterval(function() {
