@@ -14,7 +14,8 @@ a :hover :active :link :visited {
   display: default; }
 
 main {
-  display: none; }
+  display: none;
+  font-family: "VT323",monospace; }
 
 h1 {
   font-family: "VT323",monospace;

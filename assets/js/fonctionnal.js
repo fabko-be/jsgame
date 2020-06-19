@@ -372,15 +372,29 @@ function counter(attacker, defender) {
 function winLose(attacker,defender){
     if(attacker.currentHealth <= 0){
         attacker.currentHealth = 0;
-        textLog(`<font color = "#336600">${defender.name} win the fight !</font>`)
+        //document.getElementById("tryagain").style.display = "flex";
+        // if (p1 = defender){
+        //     document.getElementById("imgpp2").style.transform = "scale(1.5)";
+        // } else if  (p2 = defender) {
+        //     document.getElementById("imgpp1").style.transform = "scale(1.5)";
+        // };
         document.getElementById("fightbuttonp1").style.display = "none";
         document.getElementById("fightbuttonp2").style.display = "none";
+        textLog(`<font color = "#336600">${defender.name} win the fight !</font>`)
+
     }
     if(defender.currentHealth <= 0){
         defender.currentHealth = 0;
-        textLog(`<font color = "336600>${attacker.name} win the fight !</font>`)
+        //document.getElementById("tryagain").style.display = "flex";
+        // if (p1 = defender){
+        //     document.getElementById("imgpp1").style.transform = "scale(1.5)";
+        // } else {
+        //     document.getElementById("imgpp2").style.transform = "scale(1.5)";
+        // };
         document.getElementById("fightbuttonp1").style.display = "none";
         document.getElementById("fightbuttonp2").style.display = "none";
+        textLog(`<font color = "#336600>${attacker.name} win the fight !</font>`)
+
     }
 }
 // Deux eventlistener pour mettre à jour les barres de vies et lancer le heal
