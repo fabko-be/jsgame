@@ -32,7 +32,7 @@ main{
 }
 
 h1{
-    font-family: "robotobold";
+    font-family: "VT323",monospace;
     font-weight: bold;
     font-size: 76px;
     color: $font;
@@ -41,14 +41,14 @@ h1{
 }
 
 h2{
-    font-family: "robotobold";
+    font-family: "VT323",monospace;
     font-weight: bold;
     font-size: 36px;
     color: $font;
     text-shadow: -2px -2px white;
 }
 h3{
-    font-family: "robotobold";
+    font-family: "VT323",monospace;
     font-weight: bold;
     font-size: 24px;
     color: $font;
@@ -68,7 +68,7 @@ h3{
 body{
     background : $grey;
     background-image: url(/images/background.jpg);
-    font-family: "roboto";
+    font-family: "VT323",monospace;
 }
 
 header{
@@ -395,5 +395,32 @@ main{
         font{
         text-shadow: 1px 1px black;
         }
+    }
+}
+#tryagain{
+    display: none;
+    font-family: 'VT323', monospace;
+    letter-spacing: -3px;
+    color: darkred;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    font-size: 50px;
+    background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    :hover{
+        cursor: pointer;
+        color: rgb(255, 197, 197);
+        // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));
+        background: radial-gradient(rgba($color: #fc3131, $alpha: 0.1), rgba($color: #fc3131, $alpha: 0.4));
+        border: 2px solid black;
+        border-radius: 20px;
     }
 }
