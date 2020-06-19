@@ -11,7 +11,8 @@ a :hover :active :link :visited {
   color: none; }
 
 .fightscreen {
-  display: default; }
+  display: default;
+  height: 100vh; }
 
 main {
   display: none; }
@@ -70,7 +71,8 @@ main {
 #pname {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-right: 25px; }
   #pname div {
     margin-top: -40px; }
     #pname div h2 {
@@ -217,11 +219,15 @@ main {
 
 #cp1name {
   grid-column: 1;
-  text-align: center; }
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5%; }
 
 #cp2name {
   grid-column: 2;
-  text-align: center; }
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5%; }
 
 #hpmp1 {
   grid-columns: 1;
@@ -335,7 +341,7 @@ main {
   margin-top: 50px; }
 
 #textlog {
-  height: 150px;
+  height: 100px;
   width: 100%;
   background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
   border-radius: 10px;
