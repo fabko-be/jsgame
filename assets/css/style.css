@@ -54,7 +54,6 @@ body {
   background: #c8c8c8;
   background-image: url("../../images/background.jpg");
   background-size: cover;
-  overflow: hidden;
   font-family: "VT323",monospace; }
 
 header {
