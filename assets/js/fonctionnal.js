@@ -1,5 +1,5 @@
-    const races =[ 
-        {
+let humans =
+{
     name : "",
     race : "human",
     maxHealth: 100,
@@ -15,13 +15,14 @@
     bonusHeal: 0,
     bonusDamage: 0,
     attackTwiceChance: 0,
-},
-        {
+}
+let orcs =
+{
     name: "",
     race: "orc",
     maxHealth: 140,
     startHealth: 140,
-    currentHealth :100,
+    currentHealth : 140,
     maxDamage: 20,
     maxHealing: 30,
     damageTaken: 1,
@@ -32,8 +33,9 @@
     bonusHeal: 0,
     bonusDamage: 0,
     attackTwiceChance: 0,
-},
-        {
+}
+let elfs = 
+{
     name : "",
     race : "elf",
     maxHealth : 100,
@@ -49,7 +51,8 @@
     bonusHeal: 0,
     bonusDamage: 0,
     attackTwiceChance: 0,
-},
+}
+let vampires =
 {
     name : "",
     race : "vampire",
@@ -66,81 +69,65 @@
     bonusHeal: 0,
     bonusDamage: 0,
     attackTwiceChance: 0,
-}]
+};
 
-let p1 = [];
-let p2 = [];
+let p1 = new Object();
+let p2 = new Object();
 
 // Début de la création du P1
 document.getElementById("rhum1").addEventListener("click", () => {
-    p1[0] = races[0];
-    console.log(p1[0].race)
+    p1 = {...humans};
 });
 document.getElementById("rorc1").addEventListener("click", () => {
-    p1[0] = races[1];
-    console.log(p1[0].race)
+    p1 = {...orcs};
 });
 document.getElementById("relf1").addEventListener("click", () => {
-    p1[0] = races[2];
-    console.log(p1[0].race)
+    p1 = {...elfs};
 });
 document.getElementById("rvamp1").addEventListener("click", () => {
-    p1[0] = races[3];
-    console.log(p1[0].race)
+    p1 = {...vampires}
 });
 
 document.getElementById("bootsp1").addEventListener("click", () => {
-    p1[0].item = "boots";
-    console.log(p1[0].item)
+    p1.item = "boots";
 });
 document.getElementById("staffp1").addEventListener("click", () => {
-    p1[0].item = "staff";
-    console.log(p1[0].item)
+    p1.item = "staff";
 });
 document.getElementById("swordp1").addEventListener("click", () => {
-    p1[0].item = "sword";
-    console.log(p1[0].item)
+    p1.item = "sword";
 });
 document.getElementById("bowp1").addEventListener("click", () => {
-    p1[0].item = "bow";
-    console.log(p1[0].item)
+    p1.item = "bow";
 });
 // Fin de la création du P1
 
 // Début création P2
 
 document.getElementById("rhum2").addEventListener("click", () => {
-    p2[0] = races[0];
-    console.log(p2[0].race)
+    p2 = {...humans};
 });
 document.getElementById("rorc2").addEventListener("click", () => {
-    p2[0] = races[1];
-    console.log(p2[0].race)
+    p2 = {...orcs};
 });
 document.getElementById("relf2").addEventListener("click", () => {
-    p2[0] = races[2];
-    console.log(p2[0].race)
+    p2 = {...elfs};
 });
 document.getElementById("rvamp2").addEventListener("click", () => {
-    p2[0] = races[3];
-    console.log(p2[0].race)
+    p2 = {...vampires};
 });
 
 document.getElementById("bootsp2").addEventListener("click", () => {
-    p2[0].item = "boots";
-    console.log(p2[0].item)
+    p2.item = "boots";
 });
 document.getElementById("staffp2").addEventListener("click", () => {
-    p2[0].item = "staff";
-    console.log(p2[0].item)
+    p2.item = "staff";
 });
 document.getElementById("swordp2").addEventListener("click", () => {
-    p2[0].item = "sword";
-    console.log(p2[0].item)
+    p2.item = "sword";
 });
 document.getElementById("bowp2").addEventListener("click", () => {
-    p2[0].item = "bow";
-    console.log(p2[0].item)
+    p2.item = "bow";
 });
 
 // fin création P2
@@ -159,7 +146,6 @@ function start(){
     } else {
         document.getElementById("fightbuttonp1").style.display = "none";
     }
-    turn = 1;
 }
 // Fonction qui ajoute les multiplicateurs au joueur en fonction de l'item sélectionné
 function item(player){
@@ -180,7 +166,7 @@ function item(player){
 }
 // Fonction pour sélectionner l'image de profil de l'écran de combat
 function playerProfil(){
-    switch (p1[0].race) {
+    switch (p1.race) {
         case "human":
             document.getElementById("imgpp1").src = "../images/humanp.png";
             break;
@@ -195,7 +181,7 @@ function playerProfil(){
             break;
         default :
 }
-    switch (p2[0].race) {
+    switch (p2.race) {
         case "human":
             document.getElementById("imgpp2").src = "../images/humanp.png";
             break;
@@ -217,21 +203,15 @@ function textLog(text){
     return document.getElementById("textlog").innerHTML += text + "<br>";
 }
 document.getElementById("start").addEventListener("click", () => {
-    console.log(p1[0]);
-    console.log(p2[0]);
-    p1[0].name = (document.getElementById("p1name").value);
-    p2[0].name = (document.getElementById("p2name").value);
-    console.log(p1);
-    console.log(p2);
-    console.log(`Player 1 name is ${p1[0].name} and he is playing the race of ${p1[0].race} equiped with : ${p1[0].item}`);
-    console.log(`Player 2 name is ${p2[0].name} and he is playing the race of ${p2[0].race}.equiped with : ${p2[0].item}`);
-    document.getElementById("cp1name").innerHTML = (p1[0].name);
-    document.getElementById("cp2name").innerHTML = (p2[0].name);
-    textLog(`Player 1 name is ${p1[0].name} and he is playing the race of ${p1[0].race} equiped with : ${p1[0].item}.`);
-    textLog(`Player 2 name is ${p2[0].name} and he is playing the race of ${p2[0].race} equiped with : ${p2[0].item}.`)
+    p1.name = (document.getElementById("p1name").value);
+    p2.name = (document.getElementById("p2name").value);
+    document.getElementById("cp1name").innerHTML = (p1.name);
+    document.getElementById("cp2name").innerHTML = (p2.name);
+    textLog(`Player 1 name is ${p1.name} and he is playing the race of ${p1.race} equiped with : ${p1.item}.`);
+    textLog(`Player 2 name is ${p2.name} and he is playing the race of ${p2.race} equiped with : ${p2.item}.`)
     playerProfil()
-    item(p1[0]);
-    item(p2[0]);
+    item(p1);
+    item(p2);
     start();
 });
 // Fonction Heal standard
@@ -242,101 +222,37 @@ function heal(attacker,defender){
     attacker.currentHealth += heals;
 
     if(attacker.currentHealth > attacker.maxHealth){
+        let depasse = heals - (attacker.currentHealth - attacker.maxHealth)
         attacker.currentHealth = attacker.maxHealth;
-        textLog(`${attacker.name} can't heal himself more than this. HP on max.`)
+        textLog(`${attacker.name} can't heal himself more than 100% HP. ${depasse}HP gained.`)
     } else {
 
     textLog(`${attacker.name} heals himself for ${heals}. He has now ${attacker.currentHealth}HP.`)}
-
-    if (defender.lifeSteal != 0){
-        let stolenLife = Math.floor((attacker.currentHealth)*defender.lifeSteal);
-        attacker.currentHealth -= stolenLife;
-        defender.currentHealth += stolenLife;
-
-        if(defender.currentHealth > defender.maxHealth){
-            defender.currentHealth = defender.maxHealth;
-        
-        textLog(`${defender.name} can't steal more from ${attacker.name} but cause ${stolenLife} damage to him.`)
-        }else{
-            textLog(`${defender.name} stole ${stolenLife} HP from ${attacker.name}.`)
-        }
+    vampireCheck(attacker,defender)
+    if(attacker.currentHealth <= 0){
+        attacker.currentHealth = 0;
     }
-
+    if(defender.currentHealth <= 0){
+        defender.currentHealth = 0;
+    }
     return attacker.currentHealth;
 
 }
-
-// Fonction attack -------------------------------------
-
-function attack(attacker,defender){
-
-    damage = randomIntGen(1, 20) + Math.floor((randomIntGen(1, 20)*attacker.bonusDamage));
-
-    if (defender.item=="boots"){
-
-        dodgeChance(attacker,defender);
-    };
-
-    if (defender.race == "elf") {
-
-        counter(attacker, defender);
-    };
-
-    defender.currentHealth -= damage;
-
-    textLog(`${attacker.name} hit ${defender.name} and put him ${damage} HP damage.`)
-
-    return defender.currentHealth;
-    
-};
-
-function gameover(attacker, defender) {
-
-    if (attacker.currentHealth<= 0){
-
-        
-    }
-}
-
-function counter(attacker, defender) {
-
-     backhit = Math.floor(Math.random() * (100));
-
-        if (backhit <=29) {
-
-            damage = Math.round(damage/2);
-            attacker.currentHealth -= damage;
-
-            textLog(`${defender.name} counter the hit from ${attacker.name} and put him ${damage} HP damage.`)
-
-            damage=0;
-        } 
-}
-
-function dodgeChance(attacker, defender){
-    
-    let dodge = Math.floor(Math.random() * (100));
-
-        if (dodge <= 29) {
-
-            damage = 0;
-
-            textLog(`${defender.name} dodge the attack from ${attacker.name} ! Maybe next time...`)
-        
-        } else {
-            textLog(`${defender.name} can't dodge the attack from ${attacker.name}. Damn it ! `)
-        }
-        
-};
-
-
-
 // Si l'ennemi est un vampire (en cas de tour passer ou d'attaque)
 function vampireCheck(attacker, defender){
     if (defender.lifeSteal != 0){
-        let stolenLife = Math.floor((attacker.currentHealth)*defender.lifeSteal);
+
+        let stolenLife;
+        if(attacker.currentHealth >= 5){
+        stolenLife = Math.round((attacker.currentHealth)*defender.lifeSteal);
         attacker.currentHealth -= stolenLife;
         defender.currentHealth += stolenLife;
+    }   else {
+        stolenLife = Math.ceil((attacker.currentHealth)*defender.lifeSteal);
+        attacker.currentHealth -= stolenLife;
+        defender.currentHealth += stolenLife;
+    }
+
 
         if(defender.currentHealth > defender.maxHealth){
             defender.currentHealth = defender.maxHealth;
@@ -349,60 +265,148 @@ function vampireCheck(attacker, defender){
     return attacker.currentHealth;
 }
 
+function hpUpdate(){
+    document.getElementById("hpp1").style.width = (p1.currentHealth/p1.maxHealth)*100 + "%";
+    document.getElementById("hpp1").innerHTML = Math.floor((p1.currentHealth/p1.maxHealth)*100) + "%";
+    document.getElementById("hpp2").style.width = (p2.currentHealth/p2.maxHealth)*100 + "%";
+    document.getElementById("hpp2").innerHTML = Math.floor((p2.currentHealth/p2.maxHealth)*100) + "%";
+}
 
-document.getElementById("p1attack").addEventListener("click",() => {
-    attack(p1[0],p2[0]);
-    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
-    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
-    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
-    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
-    document.getElementById("fightbuttonp1").style.display = "none";
-    document.getElementById("fightbuttonp2").style.display = "flex";
-});
-document.getElementById("p2attack").addEventListener("click",() => {
-    attack(p2[0],p1[0]);
-    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
-    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
-    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
-    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
-    document.getElementById("fightbuttonp1").style.display = "flex";
-    document.getElementById("fightbuttonp2").style.display = "none";
-});
 
+function attack(attacker, defender){
+    damage = randomIntGen(1, 20) + Math.floor((randomIntGen(1, 20)*attacker.bonusDamage));
+    console.log(damage)
+    
+    switch(defender.race){
+        case "human": 
+        damage = Math.floor(damage *(defender.damageTaken));
+        break;
+        case "elf":
+        counter(attacker, defender);
+        break;
+    }
+
+    switch(defender.item){
+        case "boots": 
+        dodgeChance(attacker,defender);
+        break;
+    }
+
+    switch(attacker.item){
+        case "bow":
+            attackTwice(attacker,defender)
+            break;
+    }
+
+    // if (defender.item == "boots"){
+    //     dodgeChance();
+    // }
+        defender.currentHealth -= damage
+        textLog(`${defender.name} take ${damage} damages.`)
+        vampireCheck(attacker,defender)
+        if(attacker.currentHealth <= 0){
+            attacker.currentHealth = 0;
+        }
+        if(defender.currentHealth <= 0){
+            defender.currentHealth = 0;
+        }
+        // winLose(attacker, defender);
+    };
+
+function dodgeChance(attacker,defender){
+    let dodge = Math.floor(Math.random()* 100);
+
+    if (dodge <= 29){
+        damage = 0;
+        textLog(`${defender.name} dodge the attack`)
+    }
+};
+
+function attackTwice(attacker, defender){
+    let twice = Math.floor(Math.random()* 100);
+
+    if (twice <= 29){
+        textLog(`The attack hits ${defender.name} twice ! Nice shot !`)
+        damage *= 2
+    }
+};
+
+function counter(attacker, defender) {
+
+    backhit = Math.floor(Math.random() * (100));
+
+       if (backhit <=29) {
+
+           damage = Math.round(damage/2);
+           attacker.currentHealth -= damage;
+
+           textLog(`${defender.name} counter the hit from ${attacker.name} and put him ${damage} HP damage.`)
+
+           damage=0;
+       } 
+}
+
+
+
+function winLose(attacker,defender){
+    if(attacker.currentHealth <= 0){
+        attacker.currentHealth = 0;
+        document.getElementById("imgpp2").style.transform = "scale(1.5)";
+        textLog(`${defender.name} win the fight !`)
+        document.getElementById("fightbuttonp1").style.display = "none";
+        document.getElementById("fightbuttonp2").style.display = "none";
+    }
+    if(defender.currentHealth <= 0){
+        defender.currentHealth = 0;
+        document.getElementById("imgpp1").style.transform = "scale(1.5)";
+        textLog(`${attacker.name} win the fight !`)
+        document.getElementById("attacker.race").style.transform = scale(1.5);
+
+        document.getElementById("fightbuttonp1").style.display = "none";
+        document.getElementById("fightbuttonp2").style.display = "none";
+    }
+}
 // Deux eventlistener pour mettre à jour les barres de vies et lancer le heal
 document.getElementById("p1heal").addEventListener("click",() => {
-    heal(p1[0],p2[0]);
-    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
-    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
-    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
-    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
+    heal(p1,p2);
+    hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "none";
     document.getElementById("fightbuttonp2").style.display = "flex";
+    winLose(p1,p2)
 });
 document.getElementById("p2heal").addEventListener("click",() => {
-    heal(p2[0],p1[0]);
-    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
-    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
-    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
-    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
+    heal(p2,p1);
+    hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "flex";
     document.getElementById("fightbuttonp2").style.display = "none";
+    winLose(p2,p1)
 });
 document.getElementById("p1pass").addEventListener("click",() => {
-vampireCheck(p1[0],p2[0])
-    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
-    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
-    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
-    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
+    vampireCheck(p1,p2)
+    hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "none";
     document.getElementById("fightbuttonp2").style.display = "flex";
+    winLose(p1,p2)
 });
 document.getElementById("p2pass").addEventListener("click",() => {
-vampireCheck(p2[0],p1[0])
-    document.getElementById("hpp1").style.width = (p1[0].currentHealth/p1[0].maxHealth)*100 + "%";
-    document.getElementById("hpp1").innerHTML = Math.floor((p1[0].currentHealth/p1[0].maxHealth)*100) + "%";
-    document.getElementById("hpp2").style.width = (p2[0].currentHealth/p2[0].maxHealth)*100 + "%";
-    document.getElementById("hpp2").innerHTML = Math.floor((p2[0].currentHealth/p2[0].maxHealth)*100) + "%";
+    vampireCheck(p2,p1)
+    hpUpdate();
     document.getElementById("fightbuttonp1").style.display = "flex";
     document.getElementById("fightbuttonp2").style.display = "none";
+    winLose(p2,p1)
+});
+
+document.getElementById("p1attack").addEventListener("click",() => {
+attack(p1,p2);
+hpUpdate();
+document.getElementById("fightbuttonp1").style.display = "none";
+document.getElementById("fightbuttonp2").style.display = "flex";
+winLose(p1,p2)
+});
+document.getElementById("p2attack").addEventListener("click",() => {
+attack(p2,p1);
+hpUpdate();
+document.getElementById("fightbuttonp1").style.display = "flex";
+document.getElementById("fightbuttonp2").style.display = "none";
+winLose(p2,p1)
 });
