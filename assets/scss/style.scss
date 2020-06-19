@@ -1,41 +1,42 @@
 $grey : rgb(200,200,200);
 $font: rgba($color: rgb(211,211,211), $alpha: 0.5);
-@mixin figmarg{
+
+@mixin figmarg {
     margin-block-start: 0px;
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
 
-
-    @font-face {
+@font-face {
     font-family: "roboto";
     src: url(/assets/fonts/Roboto/Roboto-Regular.ttf);
 }
+
 @font-face {
     font-family: "robotobold";
     src: url(/assets/fonts/Roboto/Roboto-Bold.ttf);
 }
 
-a{
+a {
     :hover :active :link :visited{
       text-decoration: none;
       color:none;
     }
 }
 
-.fightscreen{
+.fightscreen {
     display: default;
-    height: 100vh;
+    height: 100%;
 }
 
-main{
+main {
     display: none;
     font-family: "VT323",monospace;
 
 }
 
-h1{
+h1 {
     font-family: "VT323",monospace;
     font-weight: bold;
     font-size: 76px;
@@ -44,14 +45,15 @@ h1{
     margin-bottom: 25px;
 }
 
-h2{
+h2 {
     font-family: "VT323",monospace;
     font-weight: bold;
     font-size: 36px;
     color: $font;
     text-shadow: -2px -2px white;
 }
-h3{
+
+h3 {
     font-family: "VT323",monospace;
     font-weight: bold;
     font-size: 24px;
@@ -69,20 +71,18 @@ h3{
     text-shadow: -2px -2px white;
 }
 
-body{
+body {
     background : $grey;
     background-image: url("../../images/background.jpg");
-    background-size: contain;
-    height: 100vh;
-    width: 100vw;
-    // overflow: hidden;
+    background-size: cover;
     font-family: "VT323",monospace;
 }
 
-header{
+header {
     text-align: center;
 }
-main{
+
+main {
     display: block;
     width: 60%;
     margin :{
@@ -91,52 +91,77 @@ main{
     }
 }
 
-#pimg{
+#pimg {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-#pname{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-right: 25px;
-     div {
-         margin-top: -40px;
-         h2{
+#pname {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1;
+    
+    :nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    :nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    div {
+        margin-top: -40px;
+        
+        h2 {
             text-align: center;
-         }
-        input {
-        height: 25px;
-        width: 300px;
-        border-radius: 10px;
+        }
+        
+        #p1name {
+            height: 25px;
+            width: 50%;
+            border-radius: 10px;
+            margin-left: 25%;
+        }
+        
+        #p2name {
+            height: 25px;
+            width: 50%;
+            border-radius: 10px;
+            margin-left: 25%;
         }
      }
 
 }
 
-#racechoose{
+#racechoose {
     display: grid;
 }
 
-#p1race{
+#p1race {
     display: grid;
+    grid-template-columns: repeat(4, 75px);
     grid-template-columns: 4;
     grid-template-rows: 2;
     grid-column: 1;
     margin-left: auto;
     margin-right: auto;
-    div{
+    
+    div {
         grid-column: span 4;
         margin-left: auto;
         margin-right: auto;
     }
-    figure{
+    
+    figure {
         @include figmarg();
         grid-row: 2;
         margin-left: auto;
         margin-right: auto;
+        
         img:hover {
             transform: scale(1.5);
             cursor: pointer;
@@ -144,7 +169,7 @@ main{
     }
 }
 
-#p2race{
+#p2race {
     display: grid;
     grid-template-columns: repeat(4, 75px);
     grid-template-rows: 2;
@@ -152,16 +177,19 @@ main{
     grid-row: 1;
     margin-left: auto;
     margin-right: auto;
-    div{
+    
+    div {
         grid-column: span 4;
         margin-left: auto;
         margin-right: auto;
     }
-    figure{
+    
+    figure {
         @include figmarg();
         grid-row: 2;
         margin-left: auto;
         margin-right: auto;
+        
         img:hover {
             transform: scale(1.5);
             cursor: pointer;
@@ -169,30 +197,35 @@ main{
     }
 }
 
-#itemchoose{
+#itemchoose {
     display: grid;
 }
 
-#p1item{
+#p1item {
     display: grid;
+    grid-template-columns: repeat(4, 75px);
     grid-template-columns: 4;
     grid-template-rows: 1;
     grid-column: 1;
     margin-left: auto;
     margin-right: auto;
-    div{
+    
+    div {
         grid-column: span 4;
         margin-left: auto;
         margin-right: auto;
     }
-    figure{
+
+    figure {
         @include figmarg();
         grid-row: 2;
         margin-left: auto;
         margin-right: auto;
-        img{
+        
+        img {
             width: 50px;
         }
+        
         img:hover {
             transform: scale(1.5);
             cursor: pointer;
@@ -200,7 +233,7 @@ main{
     }
 }
 
-#p2item{
+#p2item {
     display: grid;
     grid-template-columns: repeat(4, 75px);
     grid-template-rows: 2;
@@ -208,18 +241,20 @@ main{
     grid-row: 1;
     margin-left: auto;
     margin-right: auto;
-    div{
+    
+    div {
         grid-column: span 4;
         margin-left: auto;
         margin-right: auto;
     }
-    figure{
+    
+    figure {
         @include figmarg();
         grid-row: 2;
         margin-left: auto;
         margin-right: auto;
         width: 50px;
-        img{
+        img {
             width: 50px;
         }
         img:hover {
@@ -229,7 +264,7 @@ main{
     }
 }
 
-#start{
+#start {
     text-align: center;
     margin-top: 50px;
     font-weight: bold;
@@ -243,7 +278,8 @@ main{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    :hover{
+    
+    :hover {
         cursor: pointer;
         color: rgb(255, 197, 197);
         // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));
@@ -252,31 +288,33 @@ main{
         border-radius: 20px;
     }
 }
-#combatlog{
+
+#combatlog {
     display:none;
     grid-template-columns: repeat(2, 300px);
     grid-template-rows: auto;
 }
 
-#cpname{
+#cpname {
     display: grid;
     grid-template-rows: 1;
 }
-#cp1name{
+
+#cp1name {
     grid-column: 1;
     text-align: center;
     margin-top: 0px;
     margin-bottom: 5%;
 } 
 
-#cp2name{
+#cp2name {
     grid-column: 2;
     text-align: center;
     margin-top: 0px;
     margin-bottom: 5%;
 }
 
-#hpmp1{
+#hpmp1 {
     grid-columns: 1;
     width: 300px;
     height: 20px;
@@ -285,7 +323,8 @@ main{
     margin-right: auto;
     border-radius: 5px;
 }
-#hpp1{
+
+#hpp1 {
     width: 100%;
     height: 20px;
     text-align: center;
@@ -293,7 +332,7 @@ main{
     border-radius: 5px;
 }
 
-#hpmp2{
+#hpmp2 {
     margin-left: auto;
     margin-right: auto;
     grid-column: 2;
@@ -303,38 +342,43 @@ main{
     border-radius: 5px;
 }
 
-#hpp2{
+#hpp2 {
     width: 100%;
     height: 20px;
     text-align: center;
     background: greenyellow;
     border-radius: 5px;
 }
-#portrait{
+
+#portrait {
     display:grid;
 }
-#portraitp1{
+
+#portraitp1 {
     @include figmarg()
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    img{
-        border-radius: 25px;
-        border : 2px solid $grey;
-    }
-}
-#portraitp2{
-    @include figmarg()
-    margin-top: 5%;    
-    margin-left: auto;
-    margin-right: auto;
-    img{
+    
+    img {
         border-radius: 25px;
         border : 2px solid $grey;
     }
 }
 
-#fightbuttonp1{
+#portraitp2 {
+    @include figmarg()
+    margin-top: 5%;    
+    margin-left: auto;
+    margin-right: auto;
+    
+    img {
+        border-radius: 25px;
+        border : 2px solid $grey;
+    }
+}
+
+#fightbuttonp1 {
     display: flex;
     justify-content: space-evenly;
     grid-column: 1;
@@ -342,7 +386,8 @@ main{
     width: 300px;
     margin-right: auto;
     margin-left: auto;
-    div{
+    
+    div {
         color: black;
         background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
         border: 2px solid black;
@@ -351,7 +396,8 @@ main{
         font-size: 24px;
         padding-left: 5px;
         padding-right: 5px;
-        &:hover{
+        
+        &:hover {
             color: rgb(255, 197, 197);
             // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));
             background: radial-gradient(rgba($color: #fc3131, $alpha: 0.1), rgba($color: #fc3131, $alpha: 0.4));
@@ -362,7 +408,7 @@ main{
     }
 }
 
-#fightbuttonp2{
+#fightbuttonp2 {
     display: flex;
     grid-column: 2;
     justify-content: space-evenly;
@@ -370,7 +416,8 @@ main{
     width: 300px;
     margin-right: auto;
     margin-left: auto;
-    div{
+    
+    div {
         color: black;
         background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
         border: 2px solid black;
@@ -379,7 +426,8 @@ main{
         font-size: 24px;
         padding-left: 5px;
         padding-right: 5px;
-        &:hover{
+        
+        &:hover {
             color: rgb(255, 197, 197);
             // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));
             background: radial-gradient(rgba($color: #fc3131, $alpha: 0.1), rgba($color: #fc3131, $alpha: 0.4));
@@ -389,11 +437,13 @@ main{
         }
     }
 }
-#logbyturn{
+
+#logbyturn {
     grid-column: 1/3;
     margin-top: 50px;
 }
-#textlog{
+
+#textlog {
     height: 100px;
     width: 100%;
     background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
@@ -404,53 +454,16 @@ main{
     // overflow-y: hidden;
     display: flex;
     flex-direction: column;
-    div{
-        font{
+    
+    div {
+        
+        font {
         text-shadow: 1px 1px black;
         }
     }
 }
-// #tryagain{
-//     display: none;
 
-//     font-family: 'VT323', monospace;
-//     letter-spacing: -3px;
-//     color: #8b0000;
-//     text-align: center;
-//     font-weight: bold;
-//     letter-spacing: 0.2em;
-//     font-size: 50px;
-//     background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
-//     border: 2px solid black;
-//     box-shadow: 5px 5px 5px black;
-//     border-radius: 20px;
-//     position: absolute;
-//     right:25%;
-//     width: 30%;
-//     bottom: 100px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     &:hover{
-//         cursor: pointer;
-//         color: rgb(255, 197, 197);
-//         // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));
-//         background: radial-gradient(rgba($color: #fc3131, $alpha: 0.1), rgba($color: #fc3131, $alpha: 0.4));
-//         border: 2px solid black;
-//         border-radius: 20px;
-//     }
-//     a {
-//         text-decoration: none;
-//         margin-bottom: 50px;
-//         margin-top: 50px;
-//         color: black;
-//         padding: 2% 20% 2% 20%;
-//         &:hover{
-//             color : white;
-//         }
-//     }
-// }
-
-#tryagain{
+#tryagain {
     display:none;
     text-align: center;
     margin-top: 50px;
@@ -465,7 +478,8 @@ main{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    &:hover{
+
+    &:hover {
         cursor: pointer;
         color: rgb(255, 197, 197);
         // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));

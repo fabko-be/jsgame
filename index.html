@@ -15,106 +15,118 @@
         </span>
     </header>
     <main>
+
     <div class="fightscreen" id="fightscreen">
-            <section id=pname>
+            
+        <section id=pname>
+            <div>
+                <h2>Player 1 name</h2>
+                <input type="text" name="p1name" id="p1name">
+            </div>
+            <div>
+                <h2>Player 2 name</h2>
+                <input type="text" name="p2name" id="p2name">
+            </div>
+        </section>
+        
+        <article id="racechoose">
+            
+            <section id="p1race">
                 <div>
-                    <h2>Enter your name</h2>
-                    <input type="text" name="p1name" id="p1name">
+                    <h2>Choose your race</h2>
                 </div>
+                <figure>
+                    <img class = "rhum1" id = "rhum1" src="images/human.png" alt="r1" title="Human : &#10;Ability : 20% less damage taken">
+                </figure>
+                <figure>
+                    <img class = "rorc1" id = "rorc1" src="images/orc.png" alt="r2" title="Orc : &#10;Ability : 40% more max health">
+                </figure>
+                <figure>
+                    <img class = "relf1" id = "relf1" src="images/elf.png" alt="r3" title="Elf : &#10;Ability : 30% chance to reflect the attack back to the opponent. &#10;They take damage equal to 50% of the original hit.">
+                </figure>
+                <figure>
+                    <img class = "rvamp1" id = "rvamp1" src="images/vampire.png" alt="r4" title="Vampire : &#10;Ability : 10% lifesteal from opponents current health &#10;at start of the vampire's turn.">
+                </figure>
+            </section>
+            
+            <section id="p2race">
                 <div>
-                    <h2>Enter your name</h2>
-                    <input type="text" name="p2name" id="p2name">
+                    <h2>Choose your race</h2>
                 </div>
+                <figure>
+                    <img id = "rhum2" src="images/human.png" alt="r1" title="Human : &#10;Ability : 20% less damage taken">
+                </figure>
+                <figure>
+                    <img id = "rorc2" src="images/orc.png" alt="r2" title="Orc : &#10;Ability : 40% more max health">
+                </figure>
+                <figure>
+                    <img id = "relf2" src="images/elf.png" alt="r3" title="Elf : &#10;Ability : 30% chance to reflect the attack back to the opponent. &#10;They take damage equal to 50% of the original hit.">
+                </figure>
+                <figure>
+                    <img id = "rvamp2" src="images/vampire.png" alt="r4" title="Vampire : &#10;Ability : 10% lifesteal from opponents current health &#10;at start of the vampire's turn.">
+                </figure>
             </section>
-            <article id="racechoose">
-                <section id="p1race">
-                    <div>
-                        <h2>Choose your race</h2>
-                    </div>
-                    <figure>
-                        <img class = "rhum1" id = "rhum1" src="images/human.png" alt="r1" title="Human : &#10;Ability : 20% less damage taken">
-                    </figure>
-                    <figure>
-                        <img class = "rorc1" id = "rorc1" src="images/orc.png" alt="r2" title="Orc : &#10;Ability : 40% more max health">
-                    </figure>
-                    <figure>
-                        <img class = "relf1" id = "relf1" src="images/elf.png" alt="r3" title="Elf : &#10;Ability : 30% chance to reflect the attack back to the opponent. &#10;They take damage equal to 50% of the original hit.">
-                    </figure>
-                    <figure>
-                        <img class = "rvamp1" id = "rvamp1" src="images/vampire.png" alt="r4" title="Vampire : &#10;Ability : 10% lifesteal from opponents current health &#10;at start of the vampire's turn.">
-                    </figure>
-                </section>
-                <section id="p2race">
-                    <div>
-                        <h2>Choose your race</h2>
-                    </div>
-                    <figure>
-                        <img id = "rhum2" src="images/human.png" alt="r1" title="Human : &#10;Ability : 20% less damage taken">
-                    </figure>
-                    <figure>
-                        <img id = "rorc2" src="images/orc.png" alt="r2" title="Orc : &#10;Ability : 40% more max health">
-                    </figure>
-                    <figure>
-                        <img id = "relf2" src="images/elf.png" alt="r3" title="Elf : &#10;Ability : 30% chance to reflect the attack back to the opponent. &#10;They take damage equal to 50% of the original hit.">
-                    </figure>
-                    <figure>
-                        <img id = "rvamp2" src="images/vampire.png" alt="r4" title="Vampire : &#10;Ability : 10% lifesteal from opponents current health &#10;at start of the vampire's turn.">
-                    </figure>
-                </section>
-            </article>
-            <article id="itemchoose">
-                <section id="p1item">
-                    <div>
-                        <h2>Choose your item</h2>
-                    </div>
-                    <figure>
-                        <img id = "bootsp1" src="images/boots.png" alt="i1" title="Boots : &#10;Ability : 30% chance to dodge an attack">
-                    </figure>
-                    <figure>
-                        <img id = "staffp1" src="images/staff.png" alt="i2" title="Staff : &#10;Ability : 20% increase in healing">
-                    </figure>
-                    <figure>
-                        <img id = "swordp1" src="images/sword.png" alt="i3" title="Sword : &#10;Ability : 30% more damage">
-                    </figure>
-                    <figure>
-                        <img id = "bowp1" src="images/bow.png" alt="i4" title="Bow : &#10;Ability : 30% chance to attack twice">
-                    </figure>
-                </section>
-                <section id="p2item">
-                    <div>
-                        <h2>Choose your item</h2>
-                    </div>
-                    <figure>
-                        <img id = "bootsp2" src="images/boots.png" alt="i1" title="Boots : &#10;Ability : 30% chance to dodge an attack">
-                    </figure>
-                    <figure>
-                        <img id = "staffp2" src="images/staff.png" alt="i2" title="Staff : &#10;Ability : 20% increase in healing">
-                    </figure>
-                    <figure>
-                        <img id = "swordp2" src="images/sword.png" alt="i3" title="Sword : &#10;Ability : 30% more damage">
-                    </figure>
-                    <figure>
-                        <img id = "bowp2" src="images/bow.png" alt="i4" title="Bow : &#10;Ability : 30% chance to attack twice">
-                    </figure>
-                </section>
-            </article>
-            <section id="start">
-                <div id=>FIGHT !</div>
+
+        </article>
+
+        <article id="itemchoose">
+            
+            <section id="p1item">
+                <div>
+                    <h2>Pick an item</h2>
+                </div>
+                <figure>
+                    <img id = "bootsp1" src="images/boots.png" alt="i1" title="Boots : &#10;Ability : 30% chance to dodge an attack">
+                </figure>
+                <figure>
+                    <img id = "staffp1" src="images/staff.png" alt="i2" title="Staff : &#10;Ability : 20% increase in healing">
+                </figure>
+                <figure>
+                    <img id = "swordp1" src="images/sword.png" alt="i3" title="Sword : &#10;Ability : 30% more damage">
+                </figure>
+                <figure>
+                    <img id = "bowp1" src="images/bow.png" alt="i4" title="Bow : &#10;Ability : 30% chance to attack twice">
+                </figure>
             </section>
+            
+            <section id="p2item">
+                <div>
+                    <h2>Pick an item</h2>
+                </div>
+                <figure>
+                    <img id = "bootsp2" src="images/boots.png" alt="i1" title="Boots : &#10;Ability : 30% chance to dodge an attack">
+                </figure>
+                <figure>
+                    <img id = "staffp2" src="images/staff.png" alt="i2" title="Staff : &#10;Ability : 20% increase in healing">
+                </figure>
+                <figure>
+                    <img id = "swordp2" src="images/sword.png" alt="i3" title="Sword : &#10;Ability : 30% more damage">
+                </figure>
+                <figure>
+                    <img id = "bowp2" src="images/bow.png" alt="i4" title="Bow : &#10;Ability : 30% chance to attack twice">
+                </figure>
+            </section>
+        
+        </article>
+        
+        <section id="start">
+            <div id=>FIGHT !</div>
+        </section>
     </div>
+    
     <div class="combatlog" id="combatlog">
+        
         <section id=cpname>
                 <h2 id="cp1name"></h2>
                 <h2 id="cp2name"></h2>
         </section>
+        
         <section id="portrait">
             <div id="hpmp1">
-                <div id="hpp1">
-                </div>
+                <div id="hpp1"></div>
             </div>
             <div id="hpmp2">
-                <div id="hpp2">
-                </div>
+                <div id="hpp2"></div>
             </div>
             <figure id="portraitp1">
                 <img id="imgpp1" src="/images/default-avatar.png" alt="Portrait player 1">
@@ -122,29 +134,37 @@
             <figure id="portraitp2">
                 <img id="imgpp2" src="/images/default-avatar.png" alt="Portrait player 1">
             </figure>
+
             <section id="fightbuttonp1">
                 <div id="p1attack">Attack</div>
                 <div id="p1heal">Heal</div>
                 <div id="p1pass">Pass</div>
             </section>
+            
             <section id="fightbuttonp2">
                 <div id="p2attack">Attack</div>
                 <div id="p2heal">Heal</div>
                 <div id="p2pass">Pass</div>
             </section>
+            
             <section id="logbyturn">
                 <div id="textlog">
                 </div>
-            </section>   
+            </section>
+
         </section>
+    
     </div> 
+    
     <section>
-        <div id ="tryagain">
-            Try again ?
-        </div>
+        
+        <div id ="tryagain">Try again ?</div>
     </section>
-    </main> 
+
+    </main>
+
     <script src="assets/js/fonctionnal.js"></script>
     <script src="assets/js/stylingscript.js"></script>
+
 </body>
 </html>
