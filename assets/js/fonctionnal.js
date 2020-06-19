@@ -244,6 +244,8 @@ function winLose(attacker,defender){
         attacker.currentHealth = 0;
         document.getElementById("fightbuttonp1").style.display = "none";
         document.getElementById("fightbuttonp2").style.display = "none";
+        document.getElementById("tryagain").style.display= "block";
+        
         textLog(`<font color ="#336600" size="20px"> ${defender.name} win the fight !</font>`);
         if(attacker == p1){
             document.getElementById("imgpp1").style.filter = "grayscale(100%)";
@@ -257,6 +259,8 @@ function winLose(attacker,defender){
         defender.currentHealth = 0;
         document.getElementById("fightbuttonp1").style.display = "none";
         document.getElementById("fightbuttonp2").style.display = "none";
+        document.getElementById("tryagain").style.display= "block";
+
         textLog(`<font color ="#336600" size="20px"> ${attacker.name} win the fight !</font>`);
         if(defender == p1){
             document.getElementById("imgpp1").style.filter = "grayscale(100%)";

@@ -15,7 +15,8 @@ a :hover :active :link :visited {
   height: 100vh; }
 
 main {
-  display: none; }
+  display: none;
+  font-family: "VT323",monospace; }
 
 h1 {
   font-family: "VT323",monospace;
@@ -359,7 +360,6 @@ main {
   letter-spacing: -3px;
   color: darkred;
   text-align: center;
-  margin-top: 50px;
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 50px;
@@ -367,13 +367,23 @@ main {
   border: 2px solid black;
   box-shadow: 5px 5px 5px black;
   border-radius: 20px;
-  margin-bottom: 50px;
-  width: 50%;
+  position: absolute;
+  right: 25%;
+  width: 30%;
+  bottom: 100px;
   margin-left: auto;
   margin-right: auto; }
-  #tryagain :hover {
+  #tryagain:hover {
     cursor: pointer;
     color: #ffc5c5;
     background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
     border: 2px solid black;
     border-radius: 20px; }
+  #tryagain a {
+    text-decoration: none;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    color: black;
+    padding: 2% 20% 2% 20%; }
+    #tryagain a:hover {
+      color: white; }
