@@ -101,6 +101,7 @@ main{
         input {
         height: 25px;
         width: 300px;
+        border-radius: 10px;
         }
      }
 
@@ -387,6 +388,12 @@ main{
     font-size: 14px;
     padding : 5px;
     overflow: auto;
+    // overflow-y: hidden;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    div{
+        font{
+        text-shadow: 1px 1px black;
+        }
+    }
 }

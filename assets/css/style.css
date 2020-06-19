@@ -77,7 +77,8 @@ main {
       text-align: center; }
     #pname div input {
       height: 25px;
-      width: 300px; }
+      width: 300px;
+      border-radius: 10px; }
 
 #racechoose {
   display: grid; }
@@ -342,4 +343,6 @@ main {
   padding: 5px;
   overflow: auto;
   display: flex;
-  flex-direction: column-reverse; }
+  flex-direction: column; }
+  #textlog div font {
+    text-shadow: 1px 1px black; }
