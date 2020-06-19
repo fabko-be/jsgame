@@ -17,7 +17,7 @@ main {
   display: none; }
 
 h1 {
-  font-family: "robotobold";
+  font-family: "VT323",monospace;
   font-weight: bold;
   font-size: 76px;
   color: rgba(211, 211, 211, 0.5);
@@ -25,14 +25,14 @@ h1 {
   margin-bottom: 25px; }
 
 h2 {
-  font-family: "robotobold";
+  font-family: "VT323",monospace;
   font-weight: bold;
   font-size: 36px;
   color: rgba(211, 211, 211, 0.5);
   text-shadow: -2px -2px white; }
 
 h3 {
-  font-family: "robotobold";
+  font-family: "VT323",monospace;
   font-weight: bold;
   font-size: 24px;
   color: rgba(211, 211, 211, 0.5);
@@ -51,7 +51,7 @@ h3 {
 body {
   background: #c8c8c8;
   background-image: url(/images/background.jpg);
-  font-family: "roboto"; }
+  font-family: "VT323",monospace; }
 
 header {
   text-align: center; }
@@ -346,3 +346,28 @@ main {
   flex-direction: column; }
   #textlog div font {
     text-shadow: 1px 1px black; }
+
+#tryagain {
+  display: none;
+  font-family: 'VT323', monospace;
+  letter-spacing: -3px;
+  color: darkred;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  font-size: 50px;
+  background: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+  #tryagain :hover {
+    cursor: pointer;
+    color: #ffc5c5;
+    background: radial-gradient(rgba(252, 49, 49, 0.1), rgba(252, 49, 49, 0.4));
+    border: 2px solid black;
+    border-radius: 20px; }
