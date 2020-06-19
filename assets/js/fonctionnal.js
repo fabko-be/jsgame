@@ -196,31 +196,31 @@ function item(player){
 function playerProfil(){
     switch (p1.race) {
         case "human":
-            document.getElementById("imgpp1").src = "../images/humanp.png";
+            document.getElementById("imgpp1").src = "../../images/humanp.png";
             break;
         case "orc":
-            document.getElementById("imgpp1").src = "../images/orcp.png";
+            document.getElementById("imgpp1").src = "../../images/orcp.png";
             break;
         case "elf":
-            document.getElementById("imgpp1").src = "../images/elfp.png";
+            document.getElementById("imgpp1").src = "../../images/elfp.png";
             break;
         case "vampire":
-            document.getElementById("imgpp1").src = "../images/vampp.png";
+            document.getElementById("imgpp1").src = "../../images/vampp.png";
             break;
         default :
 }
     switch (p2.race) {
         case "human":
-            document.getElementById("imgpp2").src = "../images/humanp.png";
+            document.getElementById("imgpp2").src = "../../images/humanp.png";
             break;
         case "orc":
-            document.getElementById("imgpp2").src = "../images/orcp.png";
+            document.getElementById("imgpp2").src = "../../images/orcp.png";
             break;
         case "elf":
-            document.getElementById("imgpp2").src = "../images/elfp.png";
+            document.getElementById("imgpp2").src = "../../images/elfp.png";
             break;
         case "vampire":
-            document.getElementById("imgpp2").src = "../images/vampp.png";
+            document.getElementById("imgpp2").src = "../../images/vampp.png";
             break;
         default :
 
