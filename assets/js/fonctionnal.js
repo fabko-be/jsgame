@@ -468,3 +468,7 @@ window.setInterval(function() {
     var elem = document.getElementById('textlog');
     elem.scrollTop = elem.scrollHeight;
   }, 5000);
+
+document.getElementById("tryagain").addEventListener("click",() => {
+    location.reload();
+})

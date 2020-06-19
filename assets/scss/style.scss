@@ -406,24 +406,59 @@ main{
         }
     }
 }
-#tryagain{
-    display: none;
+// #tryagain{
+//     display: none;
 
-    font-family: 'VT323', monospace;
-    letter-spacing: -3px;
-    color: darkred;
+//     font-family: 'VT323', monospace;
+//     letter-spacing: -3px;
+//     color: #8b0000;
+//     text-align: center;
+//     font-weight: bold;
+//     letter-spacing: 0.2em;
+//     font-size: 50px;
+//     background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
+//     border: 2px solid black;
+//     box-shadow: 5px 5px 5px black;
+//     border-radius: 20px;
+//     position: absolute;
+//     right:25%;
+//     width: 30%;
+//     bottom: 100px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     &:hover{
+//         cursor: pointer;
+//         color: rgb(255, 197, 197);
+//         // background: radial-gradient(rgba(255, 255, 255, .3), rgba(255,255,255, .7));
+//         background: radial-gradient(rgba($color: #fc3131, $alpha: 0.1), rgba($color: #fc3131, $alpha: 0.4));
+//         border: 2px solid black;
+//         border-radius: 20px;
+//     }
+//     a {
+//         text-decoration: none;
+//         margin-bottom: 50px;
+//         margin-top: 50px;
+//         color: black;
+//         padding: 2% 20% 2% 20%;
+//         &:hover{
+//             color : white;
+//         }
+//     }
+// }
+
+#tryagain{
+    display:none;
     text-align: center;
+    margin-top: 50px;
     font-weight: bold;
     letter-spacing: 0.2em;
-    font-size: 50px;
+    font-size: 60px;
     background: radial-gradient(rgba(255, 255, 255, .2), rgba(255,255,255, .5));
     border: 2px solid black;
     box-shadow: 5px 5px 5px black;
     border-radius: 20px;
-    position: absolute;
-    right:25%;
-    width: 30%;
-    bottom: 100px;
+    margin-bottom: 50px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     &:hover{
@@ -433,15 +468,5 @@ main{
         background: radial-gradient(rgba($color: #fc3131, $alpha: 0.1), rgba($color: #fc3131, $alpha: 0.4));
         border: 2px solid black;
         border-radius: 20px;
-    }
-    a {
-        text-decoration: none;
-        margin-bottom: 50px;
-        margin-top: 50px;
-        color: black;
-        padding: 2% 20% 2% 20%;
-        &:hover{
-            color : white;
-        }
     }
 }
