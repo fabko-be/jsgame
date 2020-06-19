@@ -52,7 +52,7 @@ h3 {
 
 body {
   background: #c8c8c8;
-  background-image: url(/images/background.jpg);
+  background-image: url("../../images/background.jpg");
   font-family: "VT323",monospace; }
 
 header {
