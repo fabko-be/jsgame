@@ -245,12 +245,26 @@ function winLose(attacker,defender){
         document.getElementById("fightbuttonp1").style.display = "none";
         document.getElementById("fightbuttonp2").style.display = "none";
         textLog(`<font color ="#336600" size="20px"> ${defender.name} win the fight !</font>`);
+        if(attacker == p1){
+            document.getElementById("imgpp1").style.filter = "grayscale(100%)";
+            document.getElementById("imgpp2").style.transform = "scale(1.25)";
+        } else {
+            document.getElementById("imgpp2").style.filter = "grayscale(100%)";
+            document.getElementById("imgpp1").style.transform = "scale(1.25)";
+        }
     }
     if(defender.currentHealth <= 0){
         defender.currentHealth = 0;
         document.getElementById("fightbuttonp1").style.display = "none";
         document.getElementById("fightbuttonp2").style.display = "none";
         textLog(`<font color ="#336600" size="20px"> ${attacker.name} win the fight !</font>`);
+        if(defender == p1){
+            document.getElementById("imgpp1").style.filter = "grayscale(100%)";
+            document.getElementById("imgpp2").style.transform = "scale(1.25)";
+        } else {
+            document.getElementById("imgpp2").style.filter = "grayscale(100%)";
+            document.getElementById("imgpp1").style.transform = "scale(1.25)";
+        }
     }
 }
 // Fonction Heal standard
