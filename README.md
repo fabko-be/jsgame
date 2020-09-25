@@ -40,4 +40,4 @@ Or by pair coding.
 
 At the beginning, it was difficult to organize work properly, but finally, we are proud to show you what we have done in one week.
 
-Click here to see [our Gnolo project](https://fabquo.github.io/jsgame/ "Gnolo Project")
+Click here to see [our Gnolo project](https://fabko-be.github.io/jsgame/ "Gnolo Project")
